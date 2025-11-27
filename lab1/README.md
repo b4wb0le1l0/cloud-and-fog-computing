@@ -65,6 +65,7 @@
 
 ## Структура проекта
 
+```
 project/
 ├── app.py              # Основной код приложения
 ├── requirements.txt    # Зависимости Python
@@ -72,6 +73,7 @@ project/
 ├── docker-compose.yml  # Конфигурация Docker Compose
 ├── README.md           # Документация
 └── stack.yml           # Конфигурация файл для Docker Swarm
+```
 
 ## Примечания
 

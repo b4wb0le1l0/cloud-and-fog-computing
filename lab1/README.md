@@ -17,14 +17,46 @@
 - Docker - контейнеризация
 - Docker Compose - оркестрация
 
-## Запуск приложения
+## Запуск приложения (Docker Compose)
 
 1. Запустите команду:
    ```bash
    docker-compose up -d
    ```
 
-2. Приложение будет доступно по адресу: http://localhost:15000
+2. Остановка
+    ```bash
+    docker-compose down
+    ```
+
+## Запуск приложения (Docker Swarm)
+
+1. Инициализируем Swarm (если первый раз)
+    ```bash
+    docker swarm init
+    ```
+
+2. Сборка образа
+    ```bash
+    docker build -t lab1-front:latest .
+    ```
+
+3. Запуск stack
+    ```bash
+    docker stack deploy -c stack.yml lab1-app
+    ```
+
+4. Проверка работоспособности
+    ```bash
+    docker stack services lab1-app
+    ```
+
+5. Остановка
+    ```bash
+    docker stack rm lab1-app
+    ```
+
+### Приложение будет доступно по адресу: http://localhost:15000
 
 ## Доступные эндпоинты
 

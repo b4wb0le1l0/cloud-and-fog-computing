@@ -3,10 +3,17 @@ services:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+    deploy:
+      replicas: 1
 
-  frontend:
-    image: lab1-frontend:latest
+  front:
+    image: lab1-front:latest
     ports:
       - "15000:5000"
     deploy:
       replicas: 1
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis

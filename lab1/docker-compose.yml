@@ -1,0 +1,14 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: lab1-redis
+    ports:
+      - "6379:6379"
+
+  frontend:
+    build: .
+    container_name: lab1-frontend
+    depends_on:
+      - redis
+    ports:
+      - "15000:5000"

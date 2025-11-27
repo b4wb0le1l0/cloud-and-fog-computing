@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  frontend:
+    image: lab1-frontend:latest
+    ports:
+      - "15000:5000"
+    deploy:
+      replicas: 1
